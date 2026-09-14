@@ -71,6 +71,17 @@ If you have a large dataset (> 1GB) you probably want some indexes. `rails g aho
 
 * Bug fixes and performance improvements
 
+## Development
+
+The specs boot the dummy app in the `test` environment, which uses the `ac_test_test`
+PostgreSQL database from `spec/dummy/config/database.yml`. There is no schema or
+migrations to load, but the database must exist before running the suite:
+
+```sh
+createdb ac_test_test
+bundle exec rspec
+```
+
 ## Contributors
 
 This was built during the Rails Hackathon in July 2023 with [afogel](https://github.com/afogel) and [dnoetz](https://github.com/dnoetz).
